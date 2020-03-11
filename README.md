@@ -7,7 +7,7 @@
   ⚛️ 📄 🚀
 </h3>
 
-simple randomuser API with search functionallity, react router and more. Displaying list of users with links displaying even more details.
+simple randomUser API with search functionallity, react router and more. Displaying list of users with links displaying even more data.
 
 
 ## Getting Started
