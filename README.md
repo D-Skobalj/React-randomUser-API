@@ -17,9 +17,6 @@ simple randomUser API with search functionallity, react router and more. Display
 ```
 npm install
 ```
-```
-yarn add
-```
 
 ## Deployment
 
