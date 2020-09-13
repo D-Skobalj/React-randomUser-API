@@ -23,6 +23,3 @@ npm install
 ```
 Npm start
 ```
-```
-Yarn start
-```
