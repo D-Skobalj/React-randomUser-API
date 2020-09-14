@@ -21,5 +21,5 @@ npm install
 ### Run Locallay
 
 ```
-Npm start
+npm start
 ```
