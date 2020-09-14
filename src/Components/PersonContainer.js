@@ -3,7 +3,7 @@ import { useSpring, animated } from "react-spring"
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom"
 
-const PersonContainer = props => {
+const PersonContainer = (props) => {
 
   // Adding fade to populated PersonContainer div
   const fade = useSpring({ from: { opacity: 0}, opacity: 1})

@@ -2,21 +2,19 @@ import React from "react"
 import PersonContainer from "./PersonContainer"
 
 const PersonList = props => {
+
   // Sort persons array of objects by firstName
-  let sortByName = props.persons.sort((a, b) => {
-    let aName = a.name.first.toLowerCase()
-    let bName = b.name.first.toLowerCase()
-
-    if(aName < bName) {
-      return -1
-    } 
-    else if(aName > bName) {
-      return 1
-    }
-    return 0
-  })
   
+  // let sortByName = props.persons.sort((a, b) => {
+  //   let aName = a.name.first.toLowerCase()
+  //   let bName = b.name.first.toLowerCase()
 
+  //   if(aName < bName) return -1
+  //   if(aName > bName) return 1
+  //   return 0
+
+  // })
+  
   // Filter persons from search input
   let filtered = props.persons.filter(p => {
     return (

@@ -2,7 +2,8 @@ import React from "react"
 import { Container, Jumbotron } from "react-bootstrap";
 import { SearchBar } from "./SearchBar"
 
-const Header = (props) => {
+const Header = ({ onChangeHandler, onSubmitHandler}) => {
+  
   return (
     <div>
       <Jumbotron className="Jumbotron">
@@ -10,8 +11,8 @@ const Header = (props) => {
             <h1>Telefonkatalog</h1>
             <p>Randomuser API</p>
             <SearchBar 
-              onChangeHandler={props.onChangeHandler}   
-              onSubmitHandler={props.onSubmitHandler}       
+              onChangeHandler={onChangeHandler}   
+              onSubmitHandler={onSubmitHandler}       
             />
           </Container>
       </Jumbotron>

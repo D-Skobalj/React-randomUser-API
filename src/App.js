@@ -1,15 +1,8 @@
 import React from "react"
 import axios from "axios"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import PersonList from "./Components/PersonList"
-import Header from "./Components/Header"
-import PersonDetail from "./Page/PersonDetail"
-import Loader from "./Components/Loader"
-
-//const invertDirection = {
-//  asc: "desc",
-//  desc: "asc"
-//}
+import { PersonList, Header, Loader } from './Components'
+import PersonDetail from './Page/PersonDetail'
 
 export default class App extends React.Component {
 
@@ -26,18 +19,22 @@ export default class App extends React.Component {
 
   // requesting 30 random users using Axios 
   getData = () => {
-    axios.get("https://randomuser.me/api/?results=30&?inc=nat")
+    const URL = "https://randomuser.me/api/?results=30&?inc=nat"
+    
+    axios
+    .get(URL)
     .then( res => {
       this.setState({
         persons: res.data.results,
         isLoading: false
       })
-    }).catch(err => {
+    })
+    .catch(err => {
       console.log(`Errordata: ${err}`)
     })
   }
   
-  // Listening on input
+  // Listening on input and using arrowfunctions to avoid unnecessary bindings.
   onChangeHandler = (e) => {
     this.setState({searchInput: e.target.value})
   }
@@ -48,18 +45,18 @@ export default class App extends React.Component {
   }
   
   render() {  
-
+    const { persons, searchInput, isLoading } = this.state;
     return (
       <Router>
         <Header onChangeHandler={this.onChangeHandler} onSubmitHandler={this.onSubmitHandler} />
         <Switch>  
           {/* If loading state is true, render the Loader component, else render personlist */}
-          <Route exact path="/" render={() => this.state.isLoading ? <Loader /> : 
+          <Route exact path="/" render={() => isLoading ? <Loader /> : 
             <PersonList 
-              persons={this.state.persons} 
-              searchInput={this.state.searchInput} /> } 
+              persons={persons} 
+              searchInput={searchInput} /> } 
           />
-          <Route exact path="/contact/:id" render={(routerProps) => <PersonDetail persons={this.state.persons} {...routerProps} />} />
+          <Route exact path="/contact/:id" render={(routerProps) => <PersonDetail persons={persons} {...routerProps} />} />
           <Route path="/" render={() => <div>Opps....We cound'nt find the page you were looking for.</div>} /> 
         </Switch>
       </Router>

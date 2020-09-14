@@ -1,25 +1,16 @@
 import React from "react"
-import { FormControl, InputGroup, Button } from "react-bootstrap"
+import { FormControl, InputGroup } from "react-bootstrap"
 
 
-export const SearchBar = props => {
+export const SearchBar = ({ onSubmitHandler, searchInput, onChangeHandler }) => {
 
   return (
-    <form onSubmit={props.onSubmitHandler}>
+    <form onSubmit={onSubmitHandler}>
       <InputGroup className="mb-3 input-field"
-        value={props.searchInput}
-        onChange={props.onChangeHandler}
-      >
-      <FormControl placeholder="Sök Namn" />
+        value={searchInput}
+        onChange={onChangeHandler}>
+      <FormControl placeholder="Sök efter förnamn eller efternamn" />
       </InputGroup>
-      <p>Sortera efter</p>
-      <Button className="button-wh" variant="primary" size="sm">
-        Kön
-      </Button>
-      &nbsp;
-      <Button className="button-wh" variant="primary" size="sm">
-        namn A-Ö
-      </Button>
     </form>
   )  
 }

@@ -17,9 +17,15 @@ simple randomUser API with search functionallity, react router and more. Display
 ```
 npm install
 ```
+```
+yarn add
+```
 
-### Run locally
+## Deployment
 
 ```
-npm start
+Npm start
+```
+```
+Yarn start
 ```
