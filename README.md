@@ -18,7 +18,7 @@ simple randomUser API with search functionallity, react router and more. Display
 npm install
 ```
 
-## Run localy
+## Run locally
 
 ```
 Npm start
